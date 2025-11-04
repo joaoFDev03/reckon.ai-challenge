@@ -2,12 +2,18 @@ import { Product } from "../model/product.model.js"
 export class ProductRepo{
 
     async create(productData){
-        return await Product.insertOne(productData)
+        return Product.insertOne(productData)
     }
     async findAll(){
-        return await Product.find()
+        return Product.find()
     }
     async findById(productId){
-        return await Product.findById(productId)
+        return Product.findById(productId)
+    }
+    async update(productId, data){
+        return Product.findByIdAndUpdate(productId, data)
+    }
+    async delete(productId){
+        return Product.findByIdAndDelete(productId)
     }
 }
