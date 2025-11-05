@@ -1,11 +1,12 @@
 # reckon.ai-challenge
-# 🛍️ Products API  
+# [Products API](https://github.com/joaoFDev03/reckon.ai-challenge/tree/main/backend)
+
 
 Simple API for product management, built on **Node.js + Express + Mongoose**, with **Jest + Supertest** for testing (unit and integration).
 
 ---
 
-## ✅ Features
+## Features
 
 - Create products
 - List all products
@@ -15,3 +16,19 @@ Simple API for product management, built on **Node.js + Express + Mongoose**, wi
 - Payload validation (middleware)
 - Centralized error handling
 - Unit Testing and Integration
+
+---
+
+## Technologies
+
+| Technology | Use |
+|------------|-----|
+| Node.js | Runtime |
+| Express | API |
+| Mongoose | ODM |
+| Jest | Tests |
+| Supertest | | HTTP integration tests |
+| MongoMemoryServer | Mongo tests |
+
+---
+
