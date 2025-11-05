@@ -60,7 +60,7 @@ tests/
 │ └─errorHandler.test.js
 
 ```
-# Setup & execution
+# Setup & Execution
 ``` bash 
 npm install
 
@@ -70,12 +70,82 @@ npm test
 
 ```
 
-# endpoints & examples
-### POST /products
+# Endpoints & Examples
+#### POST /products
 ```bash 
+Body
 {
   "productName": "<teste>",
   "description": "testeD",
   "price": 2.5
 }
+Expected response
+{
+  "_id": "abc123",
+  "productName": "<teste>",
+  "description": "testeD",
+  "price": 2.5
+}
+```
+
+#### DELETE /products/:id
+```bash 
+Body
+{
+  "productName": "<teste>",
+  "description": "testeD",
+  "price": 2.5
+}
+Expected response
+{
+  "_id": "abc123",
+  "productName": "<teste>",
+  "description": "testeD",
+  "price": 2.5
+}
+```
+
+#### PUT /products/:id
+```bash 
+Body
+{
+  "productName": "Banana Premium",
+  "price": 3
+}
+Expected response
+{
+  "_id": "abc123",
+  "productName": "Banana Premium>",
+  "description": "testeD",
+  "price": 3
+}
+```
+
+#### GET /products/:id
+```bash 
+Params
+{
+  "_id": "abc123",
+
+}
+Expected response
+{
+  "_id": "abc123",
+  "productName": "<teste>",
+  "description": "testeD",
+  "price": 2.5
+}
+```
+
+#### GET /products
+```bash 
+Expected response
+[
+  {
+    "_id": "abc123",
+    "productName": "<teste>",
+    "description": "testeD",
+    "price": 2.5
+  }
+]
 ```
