@@ -33,6 +33,7 @@ Simple API for product management, built on **Node.js + Express + Mongoose**, wi
 ---
 
 ## Project Structure
+```bash 
 src/
 ├─ app.js
 ├─ server.js
