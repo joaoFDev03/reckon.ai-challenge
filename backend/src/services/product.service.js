@@ -1,16 +1,25 @@
 import { ProductRepo } from "../repo/product.repo.js";
-const productRepo = new ProductRepo();
+
 export class ProductService {
+  constructor(productRepo = new ProductRepo()) {
+    this.productRepo = productRepo;
+  }
   async createProduct(productData) {
-    return productRepo.create(productData);
+    const existing = await this.productRepo.findByName(productData.productName);
+    if (existing) {
+      const err = new Error("Product already exists");
+      err.status = 409;
+      throw err;
+    }
+    return this.productRepo.create(productData);
   }
 
   async getProducts() {
-    return productRepo.findAll();
+    return this.productRepo.findAll();
   }
-  
+
   async getProductById(productId) {
-    const product = await productRepo.findById(productId);
+    const product = await this.productRepo.findById(productId);
     if (!product) {
       const err = new Error("Product not found");
       err.status = 404;
@@ -20,7 +29,7 @@ export class ProductService {
   }
 
   async updateProduct(productId, data) {
-    const updated = await productRepo.update(productId, data);
+    const updated = await this.productRepo.update(productId, data);
     if (!updated) {
       const err = new Error("Product not found");
       err.status = 404;
@@ -30,7 +39,7 @@ export class ProductService {
   }
 
   async deleteProduct(productId) {
-    const deleted = await productRepo.delete(productId);
+    const deleted = await this.productRepo.delete(productId);
     if (!deleted) {
       const err = new Error("Product not found");
       err.status = 404;

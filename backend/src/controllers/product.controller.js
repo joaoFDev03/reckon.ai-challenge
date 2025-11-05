@@ -12,8 +12,13 @@ export async function createProduct(req, res, next) {
 }
 
 export async function getProducts(req, res, next) {
-  const products = await productService.getProducts();
-  res.json(products);
+  try{
+
+    const products = await productService.getProducts();
+    res.json(products);
+  }catch(err){
+    next(err)
+  }
 }
 
 export async function getProductById(req, res, next) {
