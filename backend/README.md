@@ -49,12 +49,33 @@ src/
 ├─ repo/
 │ └─ product.repo.js
 └─ services/
-└─ product.service.js
+│ └─ product.service.js
 
 tests/
 ├─ integration/
 │ └─ products.api.test.js
 ├─ unit/
-├─ product.service.test.js
-├─ validateProduct.test.js
-└─ errorHandler.test.js
+│ └─product.service.test.js
+│ └─validateProduct.test.js
+│ └─errorHandler.test.js
+
+```
+# Setup & execution
+``` bash 
+npm install
+
+npm run start
+
+npm test
+
+```
+
+# endpoints & examples
+### POST /products
+```bash 
+{
+  "productName": "<teste>",
+  "description": "testeD",
+  "price": 2.5
+}
+```
