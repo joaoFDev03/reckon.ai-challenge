@@ -60,6 +60,12 @@ input[type="search"] {
   border-radius: 6px;
   border: 1px solid #bbb;
 }
+.pagination-items{
+      max-width: 350px;
+  padding: .5rem;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
 
 /* ===== LIST ===== */
 ul#products {
@@ -93,14 +99,14 @@ ul#products {
   font-size: 1.2rem;
   font-weight: 600;
 }
-/* Nome + preço + descrição agrupados */
+/* Grouped name + price + description */
 .card-content {
   display: flex;
   flex-direction: column;
   gap: .35rem;
 }
 
-/* Botões lado a lado */
+/* Side-by-side buttons */
 .card-actions {
   display: flex;
   gap: .5rem;
@@ -184,4 +190,101 @@ button.del:hover {
 /* ===== UTIL ===== */
 .hidden {
   display: none !important;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  background: #fff;
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.2s ease-out;
+  position: relative; 
+  align-items: center;
+}
+
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: auto;
+}
+/* header and input */
+.modal h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal input,
+.modal textarea {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal textarea {
+  resize: vertical;
+}
+
+/* Buttons location in modal */
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s;
+}
+
+.modal-actions button:hover {
+  filter: brightness(0.9);
+}
+
+/* modal buttons */
+#modal-save {
+  background: #007bff;
+  color: white;
+}
+
+#modal-confirm {
+  background: #ef5350;
+  color: white;
+}
+
+#modal-cancel {
+  background: #bbb;
+  color: white;
+}
+
+/* ===== Smooth modal transition ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

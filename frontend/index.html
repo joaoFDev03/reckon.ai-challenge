@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product catalog</title>
     <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Products</h1>
-    <form id="product-form">
-      <input name="productName" placeholder="Name" required />
-      <input name="price" type="number" min="0" placeholder="Price" required />
-      <input name="description" placeholder="Description" required />
-      <button type="submit">Add</button>
-    </form>
-    <input
-      type="search"
-      placeholder="Type to filter a product"
-      oninput="filterByName(event)"
-    />
+    <div>
+        <form id="product-form">
+            <input name="productName" placeholder="Name" />
+            <input name="price" type="number" min="0" placeholder="Price" />
+            <input name="description" placeholder="Description" />
+            <button type="submit">Add</button>
+        </form>
+        <span id="error-label" style="color:red; margin-left:1rem;"></span>
+
+    </div>
+    <div>
+        <input type="search" placeholder="Type to filter a product" oninput="filterByName(event)" />
+        <select class="pagination-items" id="pagination-items">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+
     <ul id="products"></ul>
+
     <nav class="pagination-container">
-      <button
-        class="pagination-button"
-        id="prev-button"
-        title="Previous page"
-        aria-label="Previous page"
-      >
-        &lt;
-      </button>
+        <button class="pagination-button" id="prev-button" title="Previous page">
+            &lt;
+        </button>
 
-      <div id="pagination-numbers"></div>
+        <div id="pagination-numbers"></div>
 
-      <button
-        class="pagination-button"
-        id="next-button"
-        title="Next page"
-        aria-label="Next page"
-      >
-        &gt;
-      </button>
+        <button class="pagination-button" id="next-button" title="Next page">
+            &gt;
+        </button>
     </nav>
+
     <script src="./js/product.api.js"></script>
     <script src="./js/render.js"></script>
     <script src="./js/filter.js"></script>
     <script src="./js/pagination.js"></script>
 
     <script src="./js/main.js"></script>
-  </body>
+</body>
+
 </html>

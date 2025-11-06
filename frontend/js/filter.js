@@ -1,13 +1,12 @@
+let allItems = []; 
+let filteredItems = [];
+
 function filterByName(event) {
-  const searchTerm = event.target.value.trim().toLowerCase();
-  const listItems = document.querySelectorAll("ul#products li");
+  const term = event.target.value.trim().toLowerCase();
+  filteredItems = !term
+    ? allItems
+    : allItems.filter(item => item.productName.toLowerCase().includes(term));
 
-  listItems.forEach((item) => {
-    item.style.display = "revert";
-
-    if (!item.innerText.toLowerCase().includes(searchTerm)) {
-      item.style.display = "none";
-    }
-  });
+  render(list, filteredItems);
+  paginator.refresh();
 }
-
