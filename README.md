@@ -7,7 +7,7 @@ The backend provides a RESTful API for CRUD operations, while the frontend consu
 
 ## Overview
 
-- **Backend**: Node.js + Express + Mongoose API for managing products. Includes validation, centralized error handling, and automated tests.  
+- **Backend**: Node.js + Express + Mongoose API for managing products. Includes validation, centralized error handling, and tests.  
 - **Frontend**: Single Page Application (SPA) that interacts with the API to create, read, update, delete, filter, and paginate products. Fully responsive and user-friendly.
 
 ---
